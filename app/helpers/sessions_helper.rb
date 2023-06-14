@@ -32,9 +32,14 @@ module SessionsHelper
   
   # 永続的セッションを破棄する
   def forget(user)
-    forget(current_user)
+    user.forget
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
+  end
+
+  # ユーザーがログインしていればtrue、その他ならfalseを返す
+  def logged_in?
+    !current_user.nil?
   end
 
     # 現在のユーザーをログアウトする
