@@ -17,9 +17,8 @@ class ActiveSupport::TestCase
 
    # テストユーザーがログイン中の場合にtrueを返す
    def log_in_as(user)
-    !session[:user_id].nil?
+    session[:user_id] = user.id
   end
-  # Add more helper methods to be used by all tests here...
 end
 
 class ActionDispatch::IntegrationTest
