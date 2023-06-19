@@ -87,5 +87,13 @@ class User < ApplicationRecord
     self.activation_token  = User.new_token
     self.activation_digest = User.digest(activation_token)
   end
+
+  # def update_attribute(name, value)
+  #   name = name.to_s
+  #   verify_readonly_attribute(name)
+  #   public_send("#{name}=", value)
+
+  #   save(validate: false)
+  # end
 end
   
